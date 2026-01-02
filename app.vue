@@ -1,7 +1,7 @@
 <template>
   <div style="display: flex; flex-direction: column; align-items: center; padding: 20px">
     <div>
-      <img class="logo" src="~/assets/fhenix_logo.svg" />
+      <img class="logo" src="~/assets/luxfhe_logo.svg" />
     </div>
     <div v-if="!isVerifier">
       <CButton v-if="!isConnected" color="warning"   @click="connect" >Connect Wallet</CButton>
@@ -36,8 +36,8 @@ const queryString  = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
 const CHAIN_ID = 5432;
-const RPC_DEFAULT_ENDPOINT = "https://fhenode.fhenix.io/new/evm";
-const BLOCK_EXPLORER = "https://demoexplorer.fhenix.io";
+const RPC_DEFAULT_ENDPOINT = "https://fhenode.luxfhe.io/new/evm";
+const BLOCK_EXPLORER = "https://demoexplorer.luxfhe.io";
 const WEB_SERVICE = "https://ticketing-service-test.azurewebsites.net";
 const CONTRACT_ADDRESS = "0x611136338d98aAa1db0E10AAEc3315699279d0dd";
 
@@ -86,7 +86,7 @@ export default defineComponent({
           await provider.send('wallet_addEthereumChain', [
             {
                 chainId: `0x${CHAIN_ID.toString(16)}`,
-                chainName: 'Fhenix Network New',
+                chainName: 'LuxFHE Network New',
                 rpcUrls: [RPC_DEFAULT_ENDPOINT],
                 nativeCurrency: {
                   name: "FHE Token",
